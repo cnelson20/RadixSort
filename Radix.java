@@ -10,5 +10,7 @@ public class Radix {
 			original.extend(buckets[i]);
 		}
 	}
-	public static void
+	public static void sort(SortableLinkedList list) {
+		
+	}
 }
