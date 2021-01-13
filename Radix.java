@@ -31,7 +31,7 @@ public class Radix {
 					m = Math.max(m,Math.abs(element));
 				}
 				//System.out.println(element);
-				buckets[nth(element,i)].add(element);
+				buckets[nthNoAbs(element,i)].add(element);
 			}
 			merge(list,buckets);
 			if (i == 0) {
@@ -57,8 +57,7 @@ public class Radix {
 					m = Math.max(m,Math.abs(element));
 				}
 				//System.out.println(element);
-				if (element > 0) {
-				buckets[nth(element,i)+9].add(element);
+				buckets[nthNoAbs(element,i)+9].add(element);
 			}
 			merge(list,buckets);
 			if (i == 0) {
