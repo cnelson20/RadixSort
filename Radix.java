@@ -26,11 +26,11 @@ public class Radix {
 		int mLength = maxLength(list);
 		for (int i = 0; i <= mLength; i++) {
 			//i is the digit of the number we sorting
-			System.out.println();
+			//System.out.println();
 			for (int j = 0; j < list.size(); j++) {
 				//j is the element of the list
 				int element = list.get(j);
-				System.out.println(element);
+				//System.out.println(element);
 				buckets[nth(element,i)].add(element);
 			}
 			dummy.extend(list);
