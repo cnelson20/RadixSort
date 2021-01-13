@@ -187,6 +187,3 @@ public class SortableLinkedList{
     return ans + "]";
   }
 }
-
-SortableLinkedList.java
-Displaying SortableLinkedList.java.

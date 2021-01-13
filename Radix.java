@@ -17,7 +17,7 @@ public class Radix {
 		}
 		return m;
 	}
-	public static void radixSort(SortableLinkedList list) {
+	public static void radixSortSimple(SortableLinkedList list) {
 		SortableLinkedList dummy = new SortableLinkedList();
 		SortableLinkedList[] buckets = new SortableLinkedList[10];
 		for (int i = 0; i < buckets.length; i++) {
@@ -32,6 +32,30 @@ public class Radix {
 				int element = list.get(j);
 				//System.out.println(element);
 				buckets[nth(element,i)].add(element);
+			}
+			dummy.extend(list);
+			merge(list,buckets);
+		}
+	}
+	public static void radixSort(SortableLinkedList list) {
+		SortableLinkedList dummy = new SortableLinkedList();
+		SortableLinkedList[] buckets = new SortableLinkedList[19];
+		for (int i = 0; i < buckets.length; i++) {
+			buckets[i] = new SortableLinkedList();
+		}
+		int mLength = maxLength(list);
+		for (int i = 0; i <= mLength; i++) {
+			//i is the digit of the number we sorting
+			//System.out.println();
+			for (int j = 0; j < list.size(); j++) {
+				//j is the element of the list
+				int element = list.get(j);
+				//System.out.println(element);
+				if (element > 0) {
+				buckets[nth(element,i)+9].add(element);
+				} else {
+				buckets[9 - nth(element,i)].add(element);
+				}
 			}
 			dummy.extend(list);
 			merge(list,buckets);
